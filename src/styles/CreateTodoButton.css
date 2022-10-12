@@ -1,0 +1,23 @@
+button{
+    cursor: pointer;
+    display:flex;
+    position:absolute;
+    bottom:60px;
+    right:30px;
+    height:60px;
+    width:60px;
+    align-items:center;
+    justify-content: center;
+    border:1px solid transparent;
+    border-radius:50%;
+    padding:5%;
+    background-color:var(--darkpurple);
+    transition:0.2s;
+}
+button p{
+    font-size:4rem;
+    color: #FFF;
+}
+button:hover{
+    background-color:var(--lightpurple);
+}
