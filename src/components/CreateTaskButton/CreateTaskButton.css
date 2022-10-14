@@ -13,6 +13,7 @@ button{
     padding:5%;
     background-color:var(--darkpurple);
     transition:0.2s;
+    z-index:100;
 }
 button p{
     font-size:4rem;
