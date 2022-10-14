@@ -1,4 +1,4 @@
-button{
+.addTaskBtn{
     cursor: pointer;
     display:flex;
     position:absolute;
@@ -15,10 +15,10 @@ button{
     transition:0.2s;
     z-index:100;
 }
-button p{
+.addTaskBtn p{
     font-size:4rem;
     color: #FFF;
 }
-button:hover{
+.addTaskBtn:hover{
     background-color:var(--lightpurple);
 }

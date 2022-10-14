@@ -1,5 +1,6 @@
 .modal-container{
     display:flex;
+    flex-direction:column;
     position:fixed;
     justify-content: center;
     align-items: center;
