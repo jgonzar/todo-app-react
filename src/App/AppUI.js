@@ -8,6 +8,9 @@ import { TodoItem } from '../components/TaskItem/TaskItem';
 import { TaskForm } from '../components/TaskForm/TaskForm';
 import { CreateTodoButton } from '../components/CreateTaskButton/CreateTaskButton';
 import { Modal } from '../components/Modal/index';
+import { TasksError } from '../components/TasksError/TasksError';
+import { TasksLoading } from '../components/TasksLoading/TasksLoading';
+import { EmptyTasks } from '../components/EmptyTasks/EmptyTasks';
 
 function AppUI(){
 
@@ -30,9 +33,9 @@ function AppUI(){
             <TodoCounter />
             <TodoSearch /> 
             <TodoList>
-                {error && <p>Uh oh! There was an error...</p>}
-                {loading && <p>Loading your tasks...</p>}
-                {(!loading && !searchedTasks) && <p>Create new tasks!</p>}
+                {error && <TasksError />}
+                {loading && <TasksLoading />}
+                {(!loading && !searchedTasks) && <EmptyTasks />}
                 {searchedTasks.map(task => (
                     <TodoItem 
                     key={task.id} 

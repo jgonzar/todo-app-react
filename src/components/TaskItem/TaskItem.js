@@ -2,8 +2,7 @@ import './TaskItem.css';
 import React from 'react';
 import bullet from '../../assets/bullet.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faX  } from '@fortawesome/free-solid-svg-icons';
 
 function TodoItem(props){
 
