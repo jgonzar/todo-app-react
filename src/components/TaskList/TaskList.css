@@ -22,13 +22,19 @@ section{
 }
 i{
     cursor:pointer;
-    font-size: 2rem;
+    margin-right: 10px;
+    font-size: 2.4rem;
     color:var(--darkpurple);
     opacity:0.8;
+    transition:0.3s ease;
+    transform: rotate(0); 
 }
 i:hover{
     opacity:1;
+    transform: rotate(20deg);
+
 }
+
 ul{
     list-style: none;
 }

@@ -1,9 +1,9 @@
-import './TaskLoading.css';
+import './TasksLoading.css';
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 
-function TodoLoading(){
+function TasksLoading(){
     return( 
         <div className="loadingTask-container">
             <span className="loadingTask-completeIcon">
@@ -17,4 +17,4 @@ function TodoLoading(){
     );
 }
 
-export { TodoLoading };
+export { TasksLoading };

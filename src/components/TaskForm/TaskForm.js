@@ -2,7 +2,7 @@ import './TaskForm.css';
 import React, { useState ,useContext} from 'react';
 import { TaskContext } from '../../context';
 
-function TaskForm(){
+function TaskForm(props){
 
     const [newTaskValue, setNewTaskValue] = useState('');
 
@@ -11,7 +11,7 @@ function TaskForm(){
     } = useContext(TaskContext);
 
     const onCancel = () => {
-
+        props.setOpenModal(prevState => !prevState);
     };
 
     const onChange = (event) => {

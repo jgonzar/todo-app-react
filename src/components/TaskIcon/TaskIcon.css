@@ -1,0 +1,30 @@
+.icon-container{
+    cursor: pointer;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height: 48px;
+    width:48px;
+    border:none;
+    margin:0;
+}
+.icon-container--check{
+    position:absolute;
+    left:12px;
+}
+.icon-container--delete{
+    position:absolute;
+    top:-24px;
+    right:0;
+}
+.icon-svg{
+    height:14px;
+    width:14px;
+    transition:fill .15s;
+}
+.icon-container:hover .iconsvg--check{
+    fill:var(--darkpurple);
+}
+.icon-container:hover .icon-container--delete{
+    fill:var(--orange);
+}

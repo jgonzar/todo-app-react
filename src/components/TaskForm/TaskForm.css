@@ -15,7 +15,9 @@ form label{
     margin-bottom:15px;
 }
 textarea{
+    max-height: 400px;
     width:80%;
+    max-width:80%;
     padding:4% 5%;
     font-family:'Montserrat';
     border: 1px solid transparent;
@@ -34,6 +36,7 @@ textarea::placeholder{
     width:80%;
 }
 .btn-container button{
+    cursor:pointer;
     width:100px;
     padding:4% 5%;
     font-family:'Montserrat';
@@ -42,9 +45,16 @@ textarea::placeholder{
     border:1px solid transparent;
     border-radius:10px;
     background-color:#f2f2f2;
+    opacity:0.8;
+}
+.btn-container button:first-of-type:hover{
+    opacity:1;
 }
 .btn-container button:last-of-type{
     font-weight:400;
     color:#FFF;
     background-color:var(--orange);
+}
+.btn-container button:last-of-type:hover{
+    opacity:1;
 }

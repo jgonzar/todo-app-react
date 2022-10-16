@@ -1,6 +1,6 @@
 import React from "react";
 
-function TasksError(props){
+function TasksError({error}){
     return( 
         <p>{error}</p>
     );
