@@ -1,4 +1,5 @@
 .main{
+  max-width:500px;
   padding:5% 10% 0;
   background-image:linear-gradient(160deg, var(--darkpurple), var(--lightorange));
 }
@@ -9,4 +10,19 @@ h1{
 }
 h1 span{
   color:var(--lightorange);
+}
+
+@media screen and (max-width: 1023px){
+  .main{
+    margin:0 auto;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+  }
+}
+@media (min-width:1024px){
+  .main{
+    margin:0 auto;
+    max-width: 600px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+
+  }
 }

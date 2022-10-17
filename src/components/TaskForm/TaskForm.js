@@ -11,7 +11,7 @@ function TaskForm(props){
     } = useContext(TaskContext);
 
     const onCancel = () => {
-        props.setOpenModal(prevState => !prevState);
+        props.onToggle();
     };
 
     const onChange = (event) => {
@@ -32,7 +32,7 @@ function TaskForm(props){
              placeholder="What do you need to get done?"/>
             <div className="btn-container">
                 <button type="button" onClick={onCancel}>
-                    Cancel
+                    Close
                 </button>
                 <button type="submit">
                     Add Task

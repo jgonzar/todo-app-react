@@ -7,10 +7,10 @@ import { CompleteIcon } from '../TaskIcon/CompleteIcon';
 // import { faCheck, faX  } from '@fortawesome/free-solid-svg-icons';
 
 function TodoItem(props){
-
+    
     return(
         <li>
-            <div className="li-content">
+            <div id={props.key} className="li-content">
                 <div className="li-left">
                     {/* <i onClick={props.onDelete}><FontAwesomeIcon icon={faX} /></i> */}
                     <DeleteIcon

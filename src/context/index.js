@@ -18,7 +18,7 @@ function TaskProvider(props){
       const completedTasks = tasks.filter(tasks => !!tasks.completed).length;
     
       const totalTasks = tasks.length;
-    
+
       let searchedTasks = [];
     
       if(!searchValue.length >= 1 ){
@@ -34,25 +34,28 @@ function TaskProvider(props){
       const addTask = (text) => {
   
         const newTasks = [...tasks];
-    
+
         newTasks.push({
           completed:false,
           text
         });
+        
         saveTasks(newTasks);
       };
 
       const completeTask = (text) => {
+
         const taskIndex = tasks.findIndex(task => task.text === text);
-    
+       
         const newTasks = [...tasks];
-    
+
         newTasks[taskIndex].completed = true;
-    
+        
         saveTasks(newTasks);
       };
-    
+      
       const deleteTask = (text) => {
+
         const taskIndex = tasks.findIndex(task => task.text === text);
     
         const newTasks = [...tasks];
@@ -62,6 +65,10 @@ function TaskProvider(props){
         saveTasks(newTasks);
       };
 
+      const onToggle = () => (
+        setOpenModal(prevState => !prevState)
+      );
+
     return(
         <TaskContext.Provider value={{
             totalTasks,
@@ -69,11 +76,13 @@ function TaskProvider(props){
             searchValue,
             setSearchValue,
             searchedTasks,
+            loading,
+            error,
             addTask,
             completeTask,
             deleteTask,
             openModal,
-            setOpenModal
+            onToggle
         }}>
             {props.children}
         </TaskContext.Provider>

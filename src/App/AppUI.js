@@ -20,7 +20,7 @@ function AppUI(){
             completeTask, 
             deleteTask,
             openModal,
-            setOpenModal
+            onToggle
         } = React.useContext(TaskContext);
 
     return(
@@ -38,23 +38,24 @@ function AppUI(){
                 {(!loading && !searchedTasks) && <EmptyTasks />}
                 {searchedTasks.map(task => (
                     <TodoItem 
-                    key={task.id} 
-                    text={task.text} 
-                    completed = {task.completed} 
-                    onComplete={() => completeTask(task.text)}
-                    onDelete={() => deleteTask(task.text)}
+                        key={task.id} 
+                        text={task.text} 
+                        completed = {task.completed} 
+                        onComplete={() => completeTask(task.text)}
+                        onDelete={() => deleteTask(task.text)}
                     />
                 ))}
             </TodoList>
             { !!openModal && (
                 <Modal>
                     <TaskForm
-                    setOpenModal = {setOpenModal}
+                        onToggle={onToggle}
                     />
                 </Modal>
-            )}
+            )} 
             <CreateTodoButton
-            setOpenModal={setOpenModal}
+                openModal={openModal}  
+                onToggle={onToggle}
             />
         </main>
     )
