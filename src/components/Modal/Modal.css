@@ -11,4 +11,11 @@
     font-size:2.4rem;
     color:#FFF;
     background-color:#18181895;
+    max-width: 600px;
+}
+
+@media (min-width:1024px){
+    .modal-container{
+        margin: 0 auto;
+    }
 }
