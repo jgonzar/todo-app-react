@@ -1,4 +1,5 @@
 .main{
+  position: relative;
   max-width:500px;
   padding:5% 10% 0;
   background-image:linear-gradient(160deg, var(--darkpurple), var(--lightorange));
