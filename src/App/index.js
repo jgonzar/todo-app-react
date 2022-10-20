@@ -3,15 +3,16 @@ import { useTasks } from './useTasks';
 import { Header } from "../components/Header/Header";
 import { TaskCounter } from "../components/TaskCounter/TaskCounter";
 import { TaskSearch } from "../components/TaskSearch/TaskSearch";
-import { TodoList } from '../components/TaskList/TaskList';
-import { TodoItem } from '../components/TaskItem/TaskItem';
+import { TaskList } from '../components/TaskList/TaskList';
+import { TaskItem } from '../components/TaskItem/TaskItem';
 import { TaskForm } from '../components/TaskForm/TaskForm';
-import { CreateTodoButton } from '../components/CreateTaskButton/CreateTaskButton';
-import { Modal } from '../components/Modal/index';
 import { TasksError } from '../components/TasksError/TasksError';
 import { TasksLoading } from '../components/TasksLoading/TasksLoading';
 import { EmptyTasks } from '../components/EmptyTasks/EmptyTasks';
 import { EmptySearchResults } from '../components/EmptySearchResults/EmptySearchResults';
+import { CreateTodoButton } from '../components/CreateTaskButton/CreateTaskButton';
+import { Modal } from '../components/Modal/index';
+import { ChangeAlertWithStorageListener } from '../components/ChangeAlert';
 
 function App() {
     const {error, 
@@ -27,7 +28,8 @@ function App() {
       setSearchValue,
       addTask,
       newTaskValue, 
-      setNewTaskValue
+      setNewTaskValue,
+      sincronizeTasks,
   } = useTasks();
 
 return(
@@ -50,7 +52,7 @@ return(
             /> 
         </Header>
 
-        <TodoList
+        <TaskList
           totalTasks={totalTasks}
           searchValue={searchValue}
           error={error}
@@ -60,10 +62,9 @@ return(
           onLoading={() => <TasksLoading />}
           onEmpty={() => <EmptyTasks />}
           onEmptySearchResults={() => <EmptySearchResults searchValue={searchValue} />}
-        //   render =
         >
             {task => (
-            <TodoItem 
+            <TaskItem 
                 key={task.id} 
                 text={task.text} 
                 completed = {task.completed} 
@@ -71,7 +72,7 @@ return(
                 onDelete={() => deleteTask(task.text)}
             />
             )}
-        </TodoList>
+        </TaskList>
         { !!openModal && (
             <Modal>
                 <TaskForm
@@ -85,6 +86,9 @@ return(
         <CreateTodoButton
             openModal={openModal}  
             setOpenModal={setOpenModal}
+        />
+        <ChangeAlertWithStorageListener
+            sincronize={sincronizeTasks}
         />
     </main>
   );

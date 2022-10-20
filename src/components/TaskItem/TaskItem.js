@@ -6,12 +6,13 @@ import { CompleteIcon } from '../TaskIcon/CompleteIcon';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faCheck, faX  } from '@fortawesome/free-solid-svg-icons';
 
-function TodoItem(props){
+function TaskItem(props){
     
     return(
         <li>
             <div id={props.key} className="li-content">
                 <div className="li-left">
+                    <p className="key">{props.key}</p>
                     {/* <i onClick={props.onDelete}><FontAwesomeIcon icon={faX} /></i> */}
                     <DeleteIcon
                         onDelete={props.onDelete}
@@ -30,4 +31,4 @@ function TodoItem(props){
     );
 };
 
-export { TodoItem };
+export { TaskItem };

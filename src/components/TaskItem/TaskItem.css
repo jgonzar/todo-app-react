@@ -48,3 +48,6 @@ li span{
     margin:5px auto 0;
     border-bottom:1px solid var(--darkpurple);
 }
+.key{
+    display:none;
+}

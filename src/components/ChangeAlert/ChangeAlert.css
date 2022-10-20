@@ -1,0 +1,43 @@
+.alert-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    width:90%;
+    margin:15px auto;
+    padding:4% 5%;
+    border-radius:10px;
+    background-color:#FFF;
+}
+.alert-icon{
+    height:25px;
+    width:25px;
+    margin:10px;
+    color:var(--orange);
+}
+.alert-text{
+    font-size:1.4rem;
+    font-weight:300;
+    color:#181818;
+    text-align:center;
+}
+.alert-btn{
+    display:flex;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-size:1.4rem;
+    text-align:center;
+    border:1px solid transparent; 
+    margin:10px;
+    padding:2% 2%;
+    border-radius:50%;
+    color:#FFF;
+    background-color:var(--darkpurple);
+}
+.highlight-t{
+    color:#FCA00D;
+}
+.highlight-h{
+    color:var(--darkpurple);
+}

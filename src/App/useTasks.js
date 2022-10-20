@@ -6,6 +6,7 @@ function useTasks(){
     const {
         item: tasks,
         saveItem: saveTasks,
+        sincronizeItem:sincronizeTasks,
         loading,
         error
       } = useLocalStorage('TASKS_V1', []);
@@ -76,7 +77,8 @@ function useTasks(){
       completeTask,
       deleteTask,
       openModal,
-      setOpenModal
+      setOpenModal,
+      sincronizeTasks,
    });
 };
 

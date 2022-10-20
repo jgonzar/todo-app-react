@@ -4,8 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 // import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
-function TodoList(props){
+function TaskList(props){
+
     const renderFunc = props.children || props.render;
+
     return(
         <section>
             <div className="card-heading-container">
@@ -23,11 +25,11 @@ function TodoList(props){
 
             {props.searchedTasks.map(renderFunc)} 
             
-            <ul>
+            {/* <ul>
                 {props.children}
-            </ul>
+            </ul> */}
         </section>
     );
 };
 
-export { TodoList };
+export { TaskList };
