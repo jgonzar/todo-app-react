@@ -1,10 +1,14 @@
-h2{
+.taskCounter{
     text-align:center;
     font-size:2.4rem;
     font-weight:300;
     color:#FFF;
     margin:15px 0;
 }
-h2 span{
+.taskCounter span{
     color:var(--orange);
+}
+
+.taskCounter--loading{
+    opacity:45%;
 }

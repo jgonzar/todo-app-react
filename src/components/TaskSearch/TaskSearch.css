@@ -1,4 +1,4 @@
-input{
+.taskSearch{
     display:flex;
     height:30px;
     width:90%;
@@ -9,6 +9,10 @@ input{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     background-color: #fff;
 }
-input::placeholder{
+.taskSearch::placeholder{
     font-family: 'Montserrat';
 }
+.taskSearch:disabled{
+    opacity:45%;
+}
+

@@ -2,14 +2,20 @@ import './TaskSearch.css';
 import React from 'react';
 
 
-function TaskSearch({searchValue, setSearchValue}){
+function TaskSearch({searchValue, setSearchValue, loading}){
   
     const onSearchValueChange = (event) => {
         setSearchValue(event.target.value);
     }
     
     return(
-        <input onChange={onSearchValueChange} placeholder='Task search' value={searchValue} />  
+        <input 
+        className="taskSearch"
+        placeholder='Task search' 
+        value={searchValue}
+        onChange={onSearchValueChange} 
+        disabled={loading}
+          />  
     )
 }
 

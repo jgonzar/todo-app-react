@@ -11,13 +11,7 @@ import { Modal } from '../components/Modal/index';
 import { TasksError } from '../components/TasksError/TasksError';
 import { TasksLoading } from '../components/TasksLoading/TasksLoading';
 import { EmptyTasks } from '../components/EmptyTasks/EmptyTasks';
-
-//   { id:1, text: 'Study', completed: false},
-//   { id:2, text: 'Take a walk', completed: false},
-//   { id:3, text:'Workout', completed:false},
-//   { id:4, text:'Cook meal', completed:false},
-//   { id:5, text:'Learn React', completed:false},
-// ];
+import { EmptySearchResults } from '../components/EmptySearchResults/EmptySearchResults';
 
 function App() {
     const {error, 
@@ -43,25 +37,32 @@ return(
             <br/>
             <span>DONE</span>
         </h1>
-        <Header>
+        <Header loading={loading} >
             <TaskCounter
                 totalTasks = {totalTasks}
                 completedTasks = {completedTasks}
+                // loading={loading}
             />
             <TaskSearch
                 searchValue={searchValue}
                 setSearchValue={setSearchValue}
+                // loading={loading}   
             /> 
         </Header>
 
         <TodoList
+          totalTasks={totalTasks}
+          searchValue={searchValue}
           error={error}
           loading={loading}
           searchedTasks={searchedTasks}
           onError={() => <TasksError />}
           onLoading={() => <TasksLoading />}
           onEmpty={() => <EmptyTasks />}
-          render ={(task => (
+          onEmptySearchResults={() => <EmptySearchResults searchValue={searchValue} />}
+        //   render =
+        >
+            {task => (
             <TodoItem 
                 key={task.id} 
                 text={task.text} 
@@ -69,24 +70,8 @@ return(
                 onComplete={() => completeTask(task.text)}
                 onDelete={() => deleteTask(task.text)}
             />
-          ))}
-        >
+            )}
         </TodoList>
-
-        {/* <TodoList>
-            {error && <TasksError />}
-            {loading && <TasksLoading />}
-            {(!loading && !searchedTasks) && <EmptyTasks />}
-            {searchedTasks?.map(task => (
-                <TodoItem 
-                    key={task.id} 
-                    text={task.text} 
-                    completed = {task.completed} 
-                    onComplete={() => completeTask(task.text)}
-                    onDelete={() => deleteTask(task.text)}
-                />
-            ))}
-        </TodoList> */}
         { !!openModal && (
             <Modal>
                 <TaskForm
