@@ -38,3 +38,6 @@ i:hover{
 ul{
     list-style: none;
 }
+li::marker{
+    color:transparent;
+}

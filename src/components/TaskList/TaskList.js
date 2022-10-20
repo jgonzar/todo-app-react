@@ -12,6 +12,12 @@ function TodoList(props){
                 <i><FontAwesomeIcon icon={faClipboardList} /></i>
                 {/* <i><FontAwesomeIcon icon={faChevronUp} /></i> */}
             </div>
+            {props.error && props.onError()}
+            {props.loading && props.onLoading()}
+            {(!props.loading && !props.searchedTasks.length) && props.onEmpty()}
+
+            {props.searchedTasks.map(props.render)} 
+            
             <ul>
                 {props.children}
             </ul>

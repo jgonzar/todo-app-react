@@ -1,9 +1,8 @@
-import React, { useState, createContext} from "react";
-import { useLocalStorage } from '../context/useLocalStorage';
+import { useState} from "react";
+import { useLocalStorage } from './useLocalStorage';
 
-const TaskContext = createContext();
 
-function TaskProvider(props){
+function useTasks(){
     const {
         item: tasks,
         saveItem: saveTasks,
@@ -65,28 +64,20 @@ function TaskProvider(props){
         saveTasks(newTasks);
       };
 
-      const onToggle = () => (
-        setOpenModal(prevState => !prevState)
-      );
-
-    return(
-        <TaskContext.Provider value={{
-            totalTasks,
-            completedTasks,
-            searchValue,
-            setSearchValue,
-            searchedTasks,
-            loading,
-            error,
-            addTask,
-            completeTask,
-            deleteTask,
-            openModal,
-            onToggle
-        }}>
-            {props.children}
-        </TaskContext.Provider>
-    )
+    return({
+      totalTasks,
+      completedTasks,
+      searchValue,
+      setSearchValue,
+      searchedTasks,
+      loading,
+      error,
+      addTask,
+      completeTask,
+      deleteTask,
+      openModal,
+      setOpenModal
+   });
 };
 
-export { TaskContext, TaskProvider};
+export { useTasks };

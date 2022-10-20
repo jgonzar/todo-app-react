@@ -1,17 +1,18 @@
 import './TaskForm.css';
-import React, { useState ,useContext} from 'react';
-import { TaskContext } from '../../context';
+import React, {useState} from 'react';
+// import { useTasks } from '../../App/useTasks';
 
-function TaskForm(props){
+
+function TaskForm({addTask, setOpenModal}){
 
     const [newTaskValue, setNewTaskValue] = useState('');
 
-    const {
-        addTask,
-    } = useContext(TaskContext);
+    // const {
+    //     addTask,
+    // } = useTasks();
 
     const onCancel = () => {
-        props.onToggle();
+        setOpenModal(false);
     };
 
     const onChange = (event) => {

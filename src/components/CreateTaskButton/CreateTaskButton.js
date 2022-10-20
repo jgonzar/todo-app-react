@@ -1,18 +1,18 @@
 import './CreateTaskButton.css';
 import React from 'react';
 
-function CreateTodoButton(props){
+function CreateTodoButton({openModal, setOpenModal}){
 
     // const [ toggle, setToggle ] = useState(false);
 
     const onClickBtn = () =>{
-        props.onToggle();
+        setOpenModal(true);
         // setToggle(prevState => !prevState);
     };
     
     return(
         <button 
-        className={`${props.openModal ? true && "addTaskBtn btnToggle" : 'addTaskBtn'}`}
+        className={`${openModal ? true && "addTaskBtn btnToggle" : 'addTaskBtn'}`}
         onClick = {onClickBtn}
         // toggle = {toggle}
         >
