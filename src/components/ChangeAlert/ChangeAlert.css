@@ -17,6 +17,7 @@
     justify-content:center;
     align-items:center;
     width:90%;
+    max-width: 500px;
     padding:4% 5%;
     border-radius:10px;
     background-color:#FFF;
@@ -58,4 +59,15 @@
 }
 .highlight-h{
     color:var(--darkpurple);
+}
+
+@media(min-width:768px){
+    .alert-container{
+        max-width:600px;
+    }
+}
+@media(min-width:1024px){
+    .alert-container{
+        max-width:600px;
+    }
 }

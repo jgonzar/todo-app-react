@@ -12,7 +12,7 @@ import { EmptyTasks } from '../components/EmptyTasks/EmptyTasks';
 import { EmptySearchResults } from '../components/EmptySearchResults/EmptySearchResults';
 import { CreateTodoButton } from '../components/CreateTaskButton/CreateTaskButton';
 import { Modal } from '../components/Modal/index';
-import { ChangeAlertWithStorageListener } from '../components/ChangeAlert';
+import { ChangeAlert } from '../components/ChangeAlert';
 
 function App() {
     const {error, 
@@ -87,7 +87,7 @@ return(
             openModal={openModal}  
             setOpenModal={setOpenModal}
         />
-        <ChangeAlertWithStorageListener
+        <ChangeAlert
             sincronize={sincronizeTasks}
         />
     </main>
