@@ -1,17 +1,17 @@
 .alert-bg{
     display:flex;
     justify-content:center;
+    align-items: center;
     position:fixed;
     top:0;
     left:0;
     right:0;
     bottom:0;
-    background:#18181884;
+    background-color:#18181895;
     z-index:500;
 }
 .alert-container{
     position:fixed;
-    bottom:360px;
     display:flex;
     flex-direction:column;
     justify-content:center;
