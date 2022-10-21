@@ -3,7 +3,7 @@
     display:flex;
     position:absolute;
     bottom:60px;
-    right:30px;
+    right:10px;
     height:60px;
     width:60px;
     align-items:center;
@@ -28,3 +28,4 @@
 .btnToggle{
     transform: rotate(224deg);
 }
+

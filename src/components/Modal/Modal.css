@@ -8,14 +8,16 @@
     left:-10px;
     right:-10px;
     bottom:-10px;
+    margin: 0 auto;
     font-size:2.4rem;
     color:#FFF;
     background-color:#18181895;
-    max-width: 600px;
+    max-width: 500px;
 }
 
 @media (min-width:1024px){
     .modal-container{
+        max-width: 600px;
         margin: 0 auto;
     }
 }

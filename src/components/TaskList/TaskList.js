@@ -23,7 +23,7 @@ function TaskList(props){
 
             {(!!props.totalTasks && !props.searchedTasks.length) && props.onEmptySearchResults()}
 
-            {props.searchedTasks.map(renderFunc)} 
+            {(!props.loading && !props.error) && props.searchedTasks.map(renderFunc)} 
             
             {/* <ul>
                 {props.children}
