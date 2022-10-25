@@ -12,6 +12,8 @@ html,body,#root{
     width:100%;
     font-size: 62.5%;
     font-family: 'Montserrat', sans-serif;
+    background-image:linear-gradient(160deg, var(--darkpurple), var(--lightorange));
+
 }
 main{
     height: 100%;
